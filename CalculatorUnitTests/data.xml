@@ -1,0 +1,27 @@
+﻿<testsuite>
+	<Row>
+		<Multiplicand>0</Multiplicand>
+		<Multiplier>10</Multiplier>
+		<Product>0</Product>
+	</Row>
+	<Row>
+		<Multiplicand>10</Multiplicand>
+		<Multiplier>0</Multiplier>
+		<Product>0</Product>
+	</Row>
+	<Row>
+		<Multiplicand>1</Multiplicand>
+		<Multiplier>10</Multiplier>
+		<Product>10</Product>
+	</Row>
+	<Row>
+		<Multiplicand>10</Multiplicand>
+		<Multiplier>1</Multiplier>
+		<Product>10</Product>
+	</Row>
+	<Row>
+		<Multiplicand>2</Multiplicand>
+		<Multiplier>4</Multiplier>
+		<Product>8</Product>
+	</Row>
+</testsuite>

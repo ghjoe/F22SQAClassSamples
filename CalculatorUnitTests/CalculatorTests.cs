@@ -1,12 +1,22 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Calculator;
 using System;
+using System.Security.Claims;
+using System.Diagnostics;
 
 namespace CalculatorUnitTests
 {
     [TestClass]
     public class CalculatorTests
     {
+        //public TestContext TestContext { get; set; }
+
+        [ClassInitialize]
+        public static void ClassInitialize()
+        {
+            //
+        }
+
         [TestMethod]
         public void AddTest()
         {
@@ -49,21 +59,6 @@ namespace CalculatorUnitTests
             Assert.IsTrue(result == expectedResult);
         }
 
-        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.csv", @".\\CalculatorTestData.csv", "Row", DataAccessMethod.Sequential)]
-        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", ".\\CalculatorTestData.csv", "data#csv", DataAccessMethod.Sequential), DeploymentItem("data.csv"), TestMethod]
-        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", ".\\CalculatorTestData.csv", DataAccessMethod.Sequential]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", ".\\data.csv", "data#csv",   DataAccessMethod.Sequential), TestMethod]
-        public void DivideByPowersOfTenTestUsingDataFile(int operand1, int operand2, int expectedResult)
-        {
-            // Arrange
-            BasicCalculator myCalculator = new BasicCalculator();
-
-            // Act
-            int result = myCalculator.Divide(operand1, operand2);
-
-            // Assert
-            Assert.IsTrue(result == expectedResult);
-        }
         [TestMethod]
         public void DivideByOneTest()
         {
@@ -114,5 +109,24 @@ namespace CalculatorUnitTests
             // Assert
             Assert.IsTrue(result == 10);
         }
+
+
+        // PROBLEM - Using data source from text file to automate tests
+        //[TestMethod]
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", @".\data.xml", "Row", DataAccessMethod.Sequential)]
+        //public void MultiplyTestUsingDataFile()
+        //{
+        //    // Arrange
+        //    BasicCalculator myCalculator = new BasicCalculator();
+        //    int multiplicand = Convert.ToInt32(TestContext.Properties["Multiplicand"]);
+        //    int multiplier = Convert.ToInt32(TestContext.Properties["Multiplier"]);
+        //    int expectedResult = Convert.ToInt32(TestContext.Properties["Product"]);
+
+        //    // Act
+        //    int result = myCalculator.Divide(multiplicand, multiplier);
+
+        //    // Assert
+        //    Assert.IsTrue(result == expectedResult);
+        //}
     }
 }
