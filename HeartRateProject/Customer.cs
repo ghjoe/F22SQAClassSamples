@@ -41,7 +41,7 @@ namespace HeartRate
             }
             else if (Age > 40)
             {
-                FormulaType = "Tanuka";
+                FormulaType = "Tanaka";
                 MHR = (int)(208 - .7 * Age);
             }
             else
@@ -56,12 +56,12 @@ namespace HeartRate
                 TargetMin = (int)(MHR * .57);
                 TargetMax = (int)(MHR * .67);
             }
-            else if (ActivityLevel == ActivityLevel.SPORADIC)
+            else if (ActivityLevel == ActivityLevel.MINIMAL)
             {
                 TargetMin = (int)(MHR * .64);
                 TargetMax = (int)(MHR * .74);
             }
-            else if (ActivityLevel == ActivityLevel.MINIMAL)
+            else if (ActivityLevel == ActivityLevel.SPORADIC)
             {
                 TargetMin = (int)(MHR * .74);
                 TargetMax = (int)(MHR * .84);
