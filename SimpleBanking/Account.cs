@@ -70,3 +70,10 @@ namespace SimpleBanking
 
     }
 }
+
+/// TC1: Negative savings balanced prevented and shows error
+/// TC2: No interest provided for chequing accounts with positive balances 
+/// TC3: Adding three deposits followed by three withdrawals of same amount leads to zero balance 
+/// TC4: Negative chequing balance results in overdraft charge
+/// TC5: Savings balances less than 10K get 1% interest on whole amount
+/// TC6: Savings balances of more that 10K get 1% interest on first 10K and 2% on balances over $10K (use $20,000 as test balance)
