@@ -30,6 +30,9 @@ namespace HeartRate
 
         private void UpdateCustomerFromGUI()
         {
+            if (IsCustomerDataValid() == false)
+                return;
+
             Customer.FirstName = firstTB.Text;
             Customer.Active = activeCB.Checked;
             Customer.IsFemale = !femaleCB.Checked;
@@ -37,15 +40,15 @@ namespace HeartRate
             Customer.ActivityLevel = (ActivityLevel)activityLevelCB.SelectedIndex;
         }
 
-        private bool ValidationSuccessful()
+        private bool IsCustomerDataValid()
         {
             // Validate data entered
-            if (firstTB.Text == string.Empty)
+            if (firstTB.Text.Trim() == string.Empty)
             {
                 statusLbl.Text = "Add failed!  Please specify a valid name";
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
         private void CalculateOutputs()
