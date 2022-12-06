@@ -24,7 +24,7 @@ namespace SimpleBanking
             Balance = 0;
             FName = first;
             LName = last;
-            IsChequing = chequing;
+            IsChequing = !chequing;
         }
 
         public bool Deposit (decimal amount)
@@ -38,7 +38,7 @@ namespace SimpleBanking
             if (!IsChequing && amount > Balance)
                 return false;
 
-            Balance -= amount;
+            Balance += amount;
             return true;
         }
 
@@ -57,7 +57,7 @@ namespace SimpleBanking
             else
             {
                 if (Balance > 10000)
-                    return .01M * 10000 + .02M * (Balance - 10000);
+                    return .01M * 10000 + .02M * (Balance - 1000);
                 else
                     return .01M * Balance;
             }
